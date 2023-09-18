@@ -7,10 +7,11 @@ import Commercial from "../Assets/Commercial.png";
 import Users from "../Assets/Users.png";
 import Diploma from "../Assets/Diploma.png";
 import Logo from "../Assets/123456-removebg-preview 2.png";
-import Instructors from "../Body/Instructors";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+// import Instructors from "../Body/Instructors";
+// import Header from "../Header/Header";
+// import Footer from "../Footer/Footer";
 import Student from "../Pages/Student";
+import Instructor from "../Pages/Instructor";
 import { Sidebar, Menu, MenuItem, ProSidebarProvider  } from "react-pro-sidebar";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 
@@ -182,7 +183,7 @@ export default function SideMenu() {
               {/* when /Students routes hits it shows the Students page */}
               <Route path="/Student" element={<Student/>}/>
               {/* when /Instructors routes hits it shows the Students page */}
-              <Route path="/instructor" element={<Student/>}/>
+              <Route path="/instructor" element={<Instructor/>}/>
             </Routes>
           </section>
           </BrowserRouter>

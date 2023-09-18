@@ -1,32 +1,34 @@
-import React, {useState} from "react";
-import Human from "../Assets/human.jpg";
-import Human1 from "../Assets/pic1 human.jpg";
-import Human2 from "../Assets/pic2human.jpg";
-import Human3 from "../Assets/pic3human.jpg";
-// import Plus from "../Assets/plus.jpg"
-import AddIcon from "@mui/icons-material/Add";
+import React, {useState} from 'react'
+// import Main from "../Component/Main";
+import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
+import '../Component/Table.css'
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import Human from '../Assets/human.jpg'
+import std1 from '../Assets/student1.jpg'
+import std2 from '../Assets/student2.jpg'
+import std3 from '../Assets/student3.jpg'
+import AddIcon from '@mui/icons-material/Add';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
-// import Main from "../Component/Main";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-// import CreateIcon from "@mui/icons-material/Create";
-// import DeleteIcon from "@mui/icons-material/Delete";
-// import { colors } from "@mui/material";
 
-// instructors starts here
-export default function Instructors() {
+
+// student.jsx has intructor details
+// this is instructor page
+export default function Student() {
+
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   return (
-    <div class=" col-9  ms-4 me-3 mt-3">
+    
+        <div class=" col-9  ms-4 me-3 mt-3">
       {/* instructors heading tag */}
       <div>
-        <h3 class="d-flex ms-2">Students</h3>
+        <h3 class="d-flex ms-2">Instructors</h3>
       </div>
 
     {/* blue div tag */}
@@ -36,19 +38,15 @@ export default function Instructors() {
         class=" d-flex justify-content-between mb-4 mt-4"
         style={{ backgroundColor: "#035B96" }}
       >
-        <span class=" fw-bold text-light ms-2">All Students</span>
+        <span class=" fw-bold text-light ms-2">All Instructors</span>
         <span class="fw-bold text-light me-3">
           {" "}
-          Home {">"} Students {">"} All Students
+          Home {">"} Instructors {">"} All Instructors
         </span>
       </div>
 
-      {/* get it from component Main.js  */}
-      {/* table and add new button show */}
-      {/* edit delete functions execute */}
-
-      {/* add button */}
-      {/* shows modal by clicking button */}
+      {/* add icon and button goes here */}
+      {/* import from main.js in component */}
       <div class="d-flex justify-content-between mb-2 me-2">
         <span class="ms-3"></span> 
         {/* when button onclick open the popup menu */}
@@ -58,16 +56,15 @@ export default function Instructors() {
         </button>
       </div>
 
-    {/* show modal */}
-    {/* instead of using modal.jsx hardcode modal shows here */}
+        {/* popup menu for instructors add new button */}
+        {/* instead of using modal.jsx hardcode modal shows here */}
+        {/* same as intructor.jsx modal */}
     {/* react-bootstrap modules used */}
-    {/* handleclose function used here which is declared and completed in current page above section */}
-    {/* it is just for on off modal */}
-    <div class="justify-content-center">
+      <div class="justify-content-center">
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add new Student</Modal.Title>
+          <Modal.Title>Add new Instructor</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <Form>
@@ -92,7 +89,6 @@ export default function Instructors() {
           We'll never share your email with anyone else.
         </Form.Text> */}
       </Form.Group>
-
       
       <Button  type="submit" class="btn btn-primary">
         Submit
@@ -109,12 +105,12 @@ export default function Instructors() {
         </Modal.Footer>
       </Modal>
       </div>
+      {/* end of popup menu */}
 
-        {/* drop down button for show entries */}
-        {/* search function */}
+      {/* agow entries dropdown and search */}
+      {/* imported from main.js in component */}
 
-
-        <nav class="d-flex justify-content-between mb-4 mt-4 me-4">
+      <nav class="d-flex justify-content-between mb-4 mt-4 me-4">
       <div class="row d-flex justify-content-center">
 
       <span class="col">Show</span>
@@ -145,23 +141,26 @@ export default function Instructors() {
     </nav>
 
 
-    {/* table for student */}
-    {/* instead of using component folder main.js */}
-    {/* hard-code table shows here */}
+      {/* hard code table used instead of main.js */}
+      {/* table and add new button show */}
+      {/* edit delete functions execute */}
+      {/* whole table.jsx here */}
 
-    <div class="table-wrapper">
+
+      <div class="table-wrapper">
       <table class="table">
         <thead class="table-primary">
           <tr>
             <th scope="col">
               <ArrowDropUpIcon />
             </th>
-            <th scope="col">Roll No</th>
             <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Gender</th>
             <th scope="col">Education</th>
             <th scope="col">Mobile</th>
             <th scope="col">Email</th>
-            <th scope="col">Admission Date</th>
+            <th scope="col">Join Date</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -169,18 +168,19 @@ export default function Instructors() {
           <tr>
             <th scope="row">
             <img
-                  src={Human1}
+                  src={Human}
                   class="rounded"
                   alt="Cinque Terre"
                   height={30}
                   width={40}
                 />
             </th>
-            <td>1</td>
-            <td> cheshanya Anuradhini Chandrasekara</td>
+            <td>Madhawa Arawinda Perera</td>
+            <td> Architect</td>
+            <td> male</td>
             <td>M.Com, B.Com</td>
             <td>0774125236</td>
-            <td>chamidi@test.com</td>
+            <td>Madhawa.p197@hotmail.com</td>
             <td>12/09/2023</td>
             <td>
               <button class="btn btn-danger btn-sm me-1">
@@ -194,19 +194,19 @@ export default function Instructors() {
           <tr>
             <th scope="row">
             <img
-                  src={Human}
+                  src={std1}
                   class="rounded"
                   alt="Cinque Terre"
                   height={30}
                   width={40}
                 />
             </th>
-            <td>2</td>
-            <td>Suriyawanshage Nisal Karunarathna</td>
-            
+            <td>Nisal buddika silva</td>
+            <td>Engineering</td>
+            <td>Male</td>            
             <td>BSC in IT, MSc in IT</td>
             <td>0714525632</td>
-            <td>nisal.perera1999@gmail.com</td>
+            <td>nisal.perera1977@gmail.com</td>
             <td>11/10/2022</td>
             <td>
             <button class="btn btn-danger btn-sm me-1">
@@ -220,19 +220,20 @@ export default function Instructors() {
           <tr>
             <th scope="row">
             <img
-                  src={Human2}
+                  src={std2}
                   class="rounded"
                   alt="Cinque Terre"
                   height={30}
                   width={40}
                 />
             </th>
-            <td>3</td>
-            <td>Madura lakmal subasinghe</td>
-            <td>BSC in IT, MSc in IT, PHd</td>
+            <td>praba malshan kodithuwaku</td>
+            <td>Developer</td>
+            <td>Male</td>
+            <td>BSC(IT), MSc in IT, PHd</td>
             <td>0714575632</td>
             
-            <td>madura.suba123@hotmail.com</td>
+            <td>malshan.kodi12@hotmail.com</td>
             <td>04/09/2021</td>
             <td>
             <button class="btn btn-danger btn-sm me-1">
@@ -246,18 +247,19 @@ export default function Instructors() {
           <tr>
             <th scope="row">
             <img
-                  src={Human3}
+                  src={std3}
                   class="rounded"
                   alt="Cinque Terre"
                   height={30}
                   width={40}
                 />
             </th>
-            <td>4</td>
-            <td>Achintha imal Jayawardhana</td>
-            <td>BSC in IT</td>
+            <td>chathura imalka wijesingha </td>
+            <td>Management</td>
+            <td>Male</td>
+            <td>BSC in IT, MSc in IT</td>
             <td>0704518523</td>
-            <td>imal.j@yahoo.com</td>
+            <td>chathura.j@yahoo.com</td>
             <td>12/02/2022</td>
             <td>
             <button class="btn btn-danger btn-sm me-1">
@@ -272,12 +274,6 @@ export default function Instructors() {
       </table>
     </div>
 
-
-        {/* didnt use the main.js file anywhere in the project */}
-        {/* it is just declared not us in anywhere */}
-        {/* but dont delete yet */}
-
-      {/* <Main /> */}
 
 
       {/* number of entries show in table per page */}
@@ -321,5 +317,6 @@ export default function Instructors() {
         {/* pagination ends here */}
       </div>
     </div>
-  );
+    
+  )
 }
